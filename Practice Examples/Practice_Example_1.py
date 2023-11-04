@@ -33,12 +33,12 @@ kModel.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'
 # Epoch defines the number of times the model passes through the dataset. Batch
 # defines how many rows it looks at before updating.
 
-kModel.fit(aInputX, aInputy, epochs=150, batch_size=10)
+kModel.fit(aInputX, aInputy, epochs=10, batch_size=10)
 
 # The above step will run the model and its accuracy can be evaluated:
-_, fAccuracy = kModel.evaluate(X, y)
-print('Accuracy: %.2f' % (accuracy*100))
+_, fAccuracy = kModel.evaluate(aInputX, aInputy)
+print('Accuracy: %.2f' % (fAccuracy*100))
 
-
-
+yPrediction = kModel.predict(aInputX[1])
+print(yPrediction)
            
