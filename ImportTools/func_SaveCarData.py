@@ -23,7 +23,12 @@ def func_SaveCarData(strCarDataCSV, strSavePath):
             strFolderName = "\DriverData_" + str(iDriver) # Define name of RAW data file
             strCSVName = "\DriverData_" + str(iDriver) + "_RAW.csv" # Define name of RAW data file
             strSavePathCurr = strSavePath + strFolderName
-            os.mkdir(strSavePathCurr)
+            
+            try:
+                os.mkdir(strSavePathCurr)
+            except:
+                print('File Path Cannot be Made')
+                
             strSavePathCurr = "{}{}".format(strSavePathCurr, strCSVName) # Define the save location
             dfCurrDriverData.to_csv(strSavePathCurr, index=False)
         except:
