@@ -6,7 +6,9 @@ Created on Sat Nov  4 16:56:35 2023
 """
 
 def func_SaveCarData(strCarDataCSV, strSavePath):
-        
+    # Runs ExtractCarData to get the car data in an ordered way and then
+    # saves this to separate csv files
+    
     # Import function to load car data
     import pandas as pd
     from func_ExtractCarData import func_ExtractCarData
