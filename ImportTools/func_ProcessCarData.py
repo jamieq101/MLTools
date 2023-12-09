@@ -99,19 +99,19 @@ def func_ProcessCarData(strCircuitSavePath):
             y4 = dfCurrLap['pThrottle']
             y5 = dfCurrLap['pBrake']
             
-            ax = plt.subplots(3)
-            
-            ax[0].plot(y1, label='vCar (kph)', color='blue')
-            ax[0].legend()
-            ax[0].grid()
-            ax[1].plot(y2, label='gLat', color='blue')
-            ax[1].plot(y3, label='gLong', color='red')
-            ax[1].legend()
-            ax[1].grid()
-            ax[2].plot(y4, label='pThrottle (%)', color='blue')
-            ax[2].plot(y5, label='pBrake (%)', color='red')
-            ax[2].legend()
-            ax[2].grid()
+            fig, axes = plt.subplots(3)  # Obtain both the figure and axes objects
+                        
+            axes[0].plot(y1, label='vCar (kph)', color='blue')
+            axes[0].legend()
+            axes[0].grid()
+            axes[1].plot(y2, label='gLat', color='blue')
+            axes[1].plot(y3, label='gLong', color='red')
+            axes[1].legend()
+            axes[1].grid()
+            axes[2].plot(y4, label='pThrottle (%)', color='blue')
+            axes[2].plot(y5, label='pBrake (%)', color='red')
+            axes[2].legend()
+            axes[2].grid()
             plt.savefig(strSaveFig)
         
         iDriver = iDriver + 1
